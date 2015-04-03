@@ -1,0 +1,63 @@
+2015-04-04 02:03:09,584 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2015-04-04 02:03:17,099 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:03:18,259 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-04-04 02:09:10,160 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:09:10,270 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2015-04-04 02:09:31,681 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:09:31,788 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2015-04-04 02:10:03,140 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:10:03,241 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2015-04-04 02:11:16,204 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:11:16,306 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-04-04 02:15:36,489 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:15:36,578 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2015-04-04 02:18:01,299 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:18:01,522 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-04-04 02:21:10,639 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:21:10,725 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2015-04-04 02:21:51,072 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:21:51,327 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2015-04-04 02:28:09,831 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost:3306/eims?characterEncoding=UTF-8
+
+2015-04-04 02:28:09,940 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+

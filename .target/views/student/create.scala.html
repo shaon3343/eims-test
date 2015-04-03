@@ -1,0 +1,157 @@
+@(studentForm: Form[dummymodels.DummyStudent])
+@import helper._
+@import  models.admission.Department
+@import  models.admission.Designation
+@import  models.admission.Category
+@import  models.admission.Degree
+@import  models.admission.ClassYear
+@import  models.admission.SectionSemester
+@import  models.Division
+@import  models.District
+
+@main("Student Entry") {
+	
+		<script type="text/javascript" src='@routes.DistrictFunctions.javascriptRoutes()'></script>
+       @form(routes.StudentManagement.save()) { 
+       		
+       		 
+       		  @inputText(field=studentForm("studentName"), args='_label->"Student Name")
+       		  
+             		 
+       		  @select(
+		      studentForm("departmentId"),
+		      options(Department.getDepartmentsAsMap),
+		      '_label -> "Department",
+		      '_default -> "-- Choose a Department --"
+		    )
+		    
+		    @select(
+		      studentForm("degreeId"),
+		      options(Degree.getDegreesAsMap),
+		      '_label -> "Degree",
+		      '_default -> "-- Choose a Degree --"
+		    )
+		    
+		    @select(
+		      studentForm("classId"),
+		      options(ClassYear.getClassYearsAsMap),
+		      '_label -> "Class or Year",
+		      '_default -> "-- Choose a Class --"
+		    )
+		    
+		       
+		    @select(
+		      studentForm("sectionId"),
+		      options(SectionSemester.getSectionSemestersAsMap),
+		      '_label -> "Class or Section",
+		      '_default -> "-- Choose a Section --"
+		    )
+       
+        <table>
+		     <tr>
+		         <th>Select Image </th>
+		         <td><input type="file" name="student-image" accept="image/png"></td>
+		     </tr>
+		</table>
+       
+        @inputText(field=studentForm("parentName"), args='_label->"Parent Name")
+        
+        @inputText(field=studentForm("parentPhone"), args='_label->"Parent Phone")
+        
+        @inputText(field=studentForm("parentEmail"), args='_label->"Parent Email")
+		
+		@inputText(field=studentForm("placeOfBirth"), args='_label->"Place Of Birth") 
+    	@inputText(field=studentForm("maritalStatus"), args='_label->"Marital Status")  
+    	@inputText(field=studentForm("citizen"), args='_label->"Citizen")
+    	@textarea(field=studentForm("presentAddress"), 'rows -> 3, 'cols -> 50, '_label->"Present Address")
+	  
+	    @************ @inputText(field=studentForm("division"), args='_label->"Division")  ********@
+	   @***  @select(
+		      studentForm("division"),
+		      '_onchange="alert('hello')",
+		      '_id ->"division",
+		      options(Division.getDivisionsAsMap),
+		      '_label -> "Division",
+		      '_default -> "-- Choose a Division --"
+		    ) 
+		****@
+		    <select name="division" id="division">
+			     <option value="" class="blank">-- Choose a Division --</option>
+			     @for((id, name) <- Division.getDivisionsAsMap){
+			       <option value="@id">@name</option>
+			     }
+   			</select>
+		    
+		     
+	    @********** @inputText(field=studentForm("district"), args='_label->"District")  *********@
+	   @****   @select(
+		      studentForm("district"),
+		      '_id ->"district",
+		      options(District.getDistrictsAsMap),
+		      '_label -> "District",
+		      '_default -> "-- Choose a District --"
+		    )
+		 ***@
+		 <select name="district" id="district">
+			     <option value="" class="blank">-- Choose a District --</option>
+			  @**** <!--  @for((id, name) <- District.getDistrictsAsMap){
+			       <option value="@id">@name</option>
+			     } --> ***@
+   			</select>
+		    
+	    @textarea(field=studentForm("permanentAddress"), 'rows -> 3, 'cols -> 50, '_label->"Permanent Address")
+	   
+		@inputText(field=studentForm("mobile"), args='_label->"Mobile")
+	    @inputText(field=studentForm("email"), args='_label->"Email")
+       
+       <!--other fields-->
+             
+              <input type="submit" value="Create">
+              
+              <script>
+$('#division').on('change', function() {
+var idToGet = this.value;
+jsRoute.controllers.DistrictFunctions.getDistByDiv(idToGet).ajax({
+		success: function(data) 
+			{
+		            //alert(data[0]);
+		            
+							var result = $.parseJSON(data);
+							
+							
+							var select = document.getElementById("district"); 
+							
+							$("#district").empty();
+							var el = document.createElement("option");
+				    		el.textContent = "--Choose a District--";
+				    		el.value = "";
+				    		select.appendChild(el);
+				    
+							$.each(result, function(k, v) {
+							  	var el = document.createElement("option");
+						    	el.textContent = v;
+						    	el.value = k;
+						    	select.appendChild(el);
+							 });
+		            
+			}
+		});
+					   /*  $.ajax({
+					        type : 'GET',
+					        url : '@routes.DistrictFunctions.getDistByDiv(2)',
+					        data : {
+					            id: idToGet
+					        },
+					        success : function(data) {
+					            alert("SHAON"+data);
+					        }
+					    }); */
+	return false;
+	  					
+		});
+              
+              </script>
+   }
+                       
+}
+
